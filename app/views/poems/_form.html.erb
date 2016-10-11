@@ -16,8 +16,8 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :status %><br>
-    <%= f.number_field :status %>
+    <%= f.radio_button :status, 1 %><%= f.label :status_1, "下書き" %>
+    <%= f.radio_button :status, 2 %><%= f.label :status_2, "公開" %>
   </div>
   <div class="actions">
     <%= f.submit %>

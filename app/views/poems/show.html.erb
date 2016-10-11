@@ -1,14 +1,24 @@
 <p id="notice"><%= notice %></p>
+<h1><%= @title %></h1>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Title:</strong>
-  <%= @poem.title %>
-</p>
+  <tbody>
+    <% @poems.each do |poem| %>
+      <tr>
+        <td><%= poem.title %></td>
+        <% if poem.status == 1 %>
+          <td><%= link_to '編集', edit_poem_path(poem) %></td>
+          <td><%= link_to '削除', poem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<p>
-  <strong>Status:</strong>
-  <%= @poem.status %>
-</p>
-
-<%= link_to 'Edit', edit_poem_path(@poem) %> |
-<%= link_to 'Back', poems_path %>
+<%= link_to 'ブログ一覧画面へ', poems_path %>

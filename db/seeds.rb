@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+10.times do |n|
+  title = Faker::Space.company
+  status = 3
+  password = "password"
+  Poem.create!(
+               title: title,
+               status: status
+               )
+end
